@@ -1,0 +1,181 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Pattaya" rel="stylesheet">;
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    
+    <title>The Quote Machine</title>
+
+  </head>
+  
+  <style> 
+    
+  h1 {
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 80px;
+    color: rgb(10, 20, 155);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+  h3 {
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 50px;
+    color: rgb(205, 30, 45);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>The Quote Machine</h1>
+          <h3>Find inspiration while you drink your morning coffee!</h3>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class=".col-xs-6 .col-md-4">
+          <div class="quote-box">
+            <p1 id="quote"></p1>
+            <br>
+            <p2 id="author"></p2>
+          </div>
+          <br>
+          <hr>
+          <ul class="list-inline">
+            <li><a href="#" class="btn btn-default btn.lg get-quote"><i class="fa fa-quote-left fa-fw"></i>Get Quote</a></li>
+            <li><a href="#" class="btn btn-default btn.lg share-quote"><i class="fa fa-twitter fa-fw"></i>Share Quote</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </footer>
+
+</html>
+
+<!--CCS-->
+body {
+  background-image: url(https://www.dropbox.com/s/3z81jnb10jeslae/beach-1583714_1920.jpg?raw=1);
+  background-size: cover;
+  overflow: auto;
+}
+
+.container {
+  text-align: center;
+  padding-top: 50px;
+}
+
+<!-- h1 and h3 not working under css heading, added to style -->
+
+ h1 {
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 80px;
+  color: rgb(10, 20, 155);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 50px;
+  color: rgb(205, 30, 45);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+} 
+
+hr {
+  position: relative;
+  width: 80%;
+  border-bottom: 1px solid black;
+}
+
+br {
+  font-size: 30px;
+}
+
+p1 {
+  padding-right: 10%;
+  font-family: 'Bitter', serif;
+  font-size: 45px;
+  color: rgb(10, 20, 155);
+}
+
+p2 {
+  font-family: 'Bitter', serif;
+  font-size: 35px;
+  color: rgb(55, 10, 90);
+  padding-left: 45%;
+  padding-bottom: 10%;
+}
+
+.quote-box {
+  display: block;
+  color: rgb(15, 200, 160);
+  background-color: #FF3705;
+  background-color: rgba(255, 55, 5, 0.7);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+  padding: 11px;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid rgb(128,128,128);
+  width: 75%;
+  height: 50%;
+  margin: 3% auto auto auto;
+  line-height: 1.1;
+}
+
+<!--Javascript-->
+$(document).ready(function() {
+
+  var quote;
+  var author;
+
+  function getNewQuote() {
+    $.ajax({
+      url: 'https://api.forismatic.com/api/1.0/',
+      jsonp: 'jsonp',
+      dataType: 'jsonp',
+      data: {
+        method: 'getQuote',
+        lang: 'en',
+        format: 'jsonp'
+      },
+      success: function(response) {
+        quote = response.quoteText;
+        author = response.quoteAuthor;
+        $('#quote').text(response.quoteText);
+        if (response.quoteAuthor) {
+          $('#author').text('- ' + response.quoteAuthor);
+        } else {
+          $('#author').text('- unkown');
+        }
+      }
+    });
+  }
+
+  getNewQuote();
+
+  $('.get-quote').on('click', function(e) {
+    e.preventDefault();
+    getNewQuote();
+  });
+
+  $('.share-quote').on('click', function(e) {
+    e.preventDefault();
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote + " -" + author));
+  });
+
+});
+
