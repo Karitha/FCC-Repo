@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?
+family=Droid Serif ">
+
+<style>
+  
+  h1 {
+  font-family: Droid Serif, serif;
+  font-size: 100px;
+  text-align: center;
+}
+   
+  h2 {
+  font-family: serif;
+  font-size: 50px;
+  text-align: center;
+  }
+    
+  h3, h4, h5 {
+  font-family: serif;
+  font-size: 30px;
+  text-align: center;
+  }
+  
+   .btn-xlarge {
+  padding: 15px 20px;
+  font-size: 25px;
+  line-height: normal;
+  -webkit-border-radius: 8px:
+    -moz-border-radius: 8px;
+      border-radius: 8px;
+  }   
+  
+  .btn-custom {
+  background-color: #2A3994;
+  border-color: #CED412;
+  }
+  .btn-custom:hover, .btn=custom:focus, .btn=custom:active, .btn-custom:visited {
+  background-color: #C560E6;
+  border-color: #CED412;
+  }
+</style>
+
+<a name="top"></a>
+<div class="container-fluid">
+
+  <div class="text-center">
+
+    <div class="row">
+      <div id="background">
+        <div style="line-height:40px">
+          <br>
+        </div>
+        <h1 style="color: #2EE2F2">KARITHA'S CORNER<h1>
+          <p style="font-size:20px" class="padding" align="right"><a href=#contact>Contact Me</a></p>
+          <p style="font-size:20px" class="padding" align="right"><a href=#videos>Videos</a></p>
+          <p style="font-size:20px" class="padding" align="right"><a href=#social>Social</a></p>
+          
+          <div style="line-height:80px">
+          <br>
+          </div>
+
+        <h2 style="color: #CB6A1B">Where to find me on the web:</h2>
+          <br class="br1"></br>
+        <div class="btn-group" style="text-center">
+          <button type="button" class="btn btn-custom btn-xlarge"><a style="color: #53F22E" href="https://twitter.com/karithascorner">Twitter</a></button>
+          <button type="button" class="btn btn-custom btn-xlarge"><a style="color: #53F22E" href="https://github.com/Karitha">GitHub</a></button>
+          <button type="button" class="btn btn-custom btn-xlarge"><a style="color: #53F22E" href="https://plus.google.com/u/0/b/108850126754577749245/+KarithasCorner/videos">Google+</a></button>
+          <button type="button" class="btn btn-custom btn-xlarge"><a style="color: #53F22E" href="https://www.youtube.com/c/KarithasCorner ">YouTube</a></button>
+        </div>
+          
+          <br></br>
+          <br></br>
+      
+          <p class="padding1 box" style="font-size:20px">Welcome to my website. My current goal is to create my own content and programs.
+          So far, I had only really dwelved into Python. I have recently started reading about html and thought I would give it a try. I find it very dynamic and run to work with. I'm really enjoying working on this.</p>
+      
+          <br></br>  
+          <a name="videos"></a>
+          <h3 style="color: #CB6A1B">Below is a sample of my videos</h3>
+          <br></br>
+          <br></br>
+
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/aF-i7ZxZYls" frameborder="0" allowfullscreen></iframe>
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/bVuprK0ViWU" frameborder="0" allowfullscreen></iframe>
+<br></br>
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/OUrdYbKmjAc" frameborder="0" allowfullscreen></iframe>
+ 
+
+
+          <div style="line-height:100px">
+    <br>
+          </div>
+
+       <a name="social"></a>
+       <h4 style="color: #CB6A1B">Social Media Feed</h3>
+          <br></br>
+          <br></br>
+       <a class="twitter-timeline"  href="https://twitter.com/karithascorner" data-widget-id="707444185968844800" width="350" height="500">Tweets by @karithascorner</a>
+       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+          <div style="line-height:100px">
+    <br>
+          </div>
+
+<a name="contact"></a>
+<h5 style="color: #CB6A1B">Contact Me</h5>
+
+    <p><a href="#">karithascorner@gmail.com</p>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+<a href="#top">Back to top</a>
+
+</div>
+
+<!--CSS-->
+body {
+    background-image: url(//www.dropbox.com/s/x7ztx2gmbx0cbye/Abstract-Background-Darkness.jpg?raw=1);
+  background-size: cover;
+  overflow:auto;
+}
+
+  p {
+  color: white;
+  }
+
+  p.padding {
+  padding-right:6%;
+  }
+
+  p.padding1 {
+  padding-right:20%;
+  padding-left:20%;
+  }
+
